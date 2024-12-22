@@ -4,10 +4,26 @@ dotenv.config();
 // TODO: Define an interface for the Coordinates object
 
 // TODO: Define a class for the Weather object
-
+class Weather {
+  date:string;
+  icon:string;
+  iconDescription:string;
+  tempF:number;
+  windSpeed:number;
+  humidity:number;
+}
+//create constuctor 
 // TODO: Complete the WeatherService class
 class WeatherService {
   // TODO: Define the baseURL, API key, and city name properties
+  cityName: string
+
+  constructor (
+    cityName:string
+
+  ){
+    this.cityName=cityName
+  }
   // TODO: Create fetchLocationData method
   // private async fetchLocationData(query: string) {}
   // TODO: Create destructureLocationData method
@@ -28,4 +44,4 @@ class WeatherService {
   // async getWeatherForCity(city: string) {}
 }
 
-export default new WeatherService();
+export default WeatherService;

@@ -5,15 +5,23 @@ const router = Router();
 // import WeatherService from '../../service/weatherService.js';
 
 // TODO: POST Request with city name to retrieve weather data
-router.post('/', (req, res) => {
-  // TODO: GET weather data from city name
-  // TODO: save city to search history
-});
+router.post('/', async (req, res) => {
+  console.log (req.body)
+
+  const weatherUrl= `${process.env.API_BASE_URL}/data/2.5/forecast?q=${req.body.cityName}&appid=${process.env.API_KEY}`
+  const response = await fetch (weatherUrl) 
+
+  const data = await response.json()
+    // console.log (data) 
+    res.json(data)
+//   // TODO: GET weather data from city name
+//   // TODO: save city to search history
+})
 
 // TODO: GET search history
-router.get('/history', async (req, res) => {});
+// router.get('/history', async (req, res) => {});
 
 // * BONUS TODO: DELETE city from search history
-router.delete('/history/:id', async (req, res) => {});
+// router.delete('/history/:id', async (req, res) => {});
 
 export default router;
