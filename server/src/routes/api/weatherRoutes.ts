@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
 
   weatherService.getWeatherForCity(req.body.cityName)
     .then(data=>{
+      HistoryService.addCity(req.body.cityName)
       return res.json(data)
     })
 
@@ -41,6 +42,7 @@ router.get('/history', async (_req, res) => {
 });
 
 // * BONUS TODO: DELETE city from search history
-// router.delete('/history/:id', async (req, res) => {});
+// router.delete('/history/:id', async (req, res) => {
+// HistoryService});
 
 export default router;
