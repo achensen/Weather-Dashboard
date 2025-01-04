@@ -25,7 +25,7 @@ class HistoryService {
   //removeCity method that removes a city from the db.json file
   async removeCity(id: string) {
     const currentCities = await this.read();
-    const index = currentCities.find((item: any) => item.id === id);
+    const index = currentCities.findIndex((item: any) => item.id === id);
 //remove the city with that id from the array
     currentCities.splice(index, 1);
 //puts the rest of the existing cities back in the db.json
