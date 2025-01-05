@@ -62,6 +62,7 @@ const fetchSearchHistory = async () => {
 };
 
 const deleteCityFromHistory = async (id: string) => {
+  console.log ('calling removeCity with ID', id);
   await fetch(`/api/weather/history/${id}`, {
     method: 'DELETE',
     headers: {
@@ -76,28 +77,70 @@ Render Functions
 
 */
 
-const renderCurrentWeather = (currentWeather: any): void => {
-  const { city, date, icon, iconDescription, tempF, windSpeed, humidity } =
-    currentWeather;
 
-  // convert the following to typescript
+  
+   
+
+  // // convert the following to typescript
+  // heading.textContent = `${city} (${date})`;
+  // weatherIcon.setAttribute(
+  //   'src',
+  //   `https://openweathermap.org/img/w/${icon}.png`
+  // );
+  // weatherIcon.setAttribute('alt', iconDescription);
+  // weatherIcon.setAttribute('class', 'weather-img');
+  // heading.append(weatherIcon);
+  // tempEl.textContent = `Temp: ${tempF}°F`;
+  // windEl.textContent = `Wind: ${windSpeed} MPH`;
+  // humidityEl.textContent = `Humidity: ${humidity} %`;
+
+  // if (todayContainer) {
+  //   todayContainer.innerHTML = '';
+  //   todayContainer.append(heading, tempEl, windEl, humidityEl);
+  // }
+
+
+  // const heading: HTMLElement = document.createElement('h2');
+  // const weatherIcon: HTMLImageElement = document.createElement('img');
+// };
+
+interface CurrentWeather {
+  city: string;
+  date: string;
+  icon: string;
+  iconDescription: string;
+  tempF: number;
+  windSpeed: number;
+  humidity: number;
+}
+
+const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
+  const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
+
   heading.textContent = `${city} (${date})`;
+
   weatherIcon.setAttribute(
     'src',
     `https://openweathermap.org/img/w/${icon}.png`
   );
+
   weatherIcon.setAttribute('alt', iconDescription);
   weatherIcon.setAttribute('class', 'weather-img');
-  heading.append(weatherIcon);
+
   tempEl.textContent = `Temp: ${tempF}°F`;
-  windEl.textContent = `Wind: ${windSpeed} MPH`;
-  humidityEl.textContent = `Humidity: ${humidity} %`;
+  windEl.textContent = `Wind: ${windSpeed}MPH`;
+  humidityEl.textContent = `Humidity: ${humidity}%`
 
   if (todayContainer) {
-    todayContainer.innerHTML = '';
-    todayContainer.append(heading, tempEl, windEl, humidityEl);
+    todayContainer.innerHTML = ''; 
+    todayContainer.append(heading, weatherIcon, tempEl, windEl, humidityEl);
   }
 };
+
+
+
+
+
 
 const renderForecast = (forecast: any): void => {
   const headingCol = document.createElement('div');

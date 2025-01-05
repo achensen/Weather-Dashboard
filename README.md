@@ -17,7 +17,7 @@
 This project is licensed with MIT
 
 ## Installation 
-
+npm install uuid
 
 ## Usage
 

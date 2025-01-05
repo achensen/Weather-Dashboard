@@ -29,7 +29,7 @@ class HistoryService {
 //remove the city with that id from the array
     currentCities.splice(index, 1);
 //puts the rest of the existing cities back in the db.json
-    fs.writeFileSync("db/db.json", JSON.stringify(currentCities));
+   fs.writeFileSync("db/db.json", JSON.stringify(currentCities));
 
   }
 }
