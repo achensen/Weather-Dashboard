@@ -32,8 +32,7 @@ class Weather {
     this.city=city
   }
 }
-//create constuctor 
-// TODO: Complete the WeatherService class
+//Complete the WeatherService class
 class WeatherService {
   // TODO: Define the baseURL, API key, and city name properties
   cityName: string

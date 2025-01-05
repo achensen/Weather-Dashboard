@@ -102,10 +102,23 @@ interface CurrentWeather {
   humidity: number;
 }
 
+const formatDate = (timestamp: number): string => {
+  const date = new Date(timestamp * 1000);  
+  return date.toLocaleDateString('en-US', {  
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+
 const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
+  // const formattedDate = formatDate(currentWeather.date);
+
   heading.textContent = `${city} (${date})`;
+
 
   weatherIcon.setAttribute(
     'src',
