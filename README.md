@@ -17,7 +17,8 @@ This application allows for user input to check the 5 day forcast of a city. . y
 This project is licensed with MIT
 
 ## Installation 
-npm install uuid
+npm i
+
 
 ## Usage
 

@@ -30,7 +30,7 @@ class HistoryService {
     currentCities.splice(index, 1);
 //puts the rest of the existing cities back in the db.json
    fs.writeFileSync("db/db.json", JSON.stringify(currentCities));
-
+    console.log("Updated File Written Post Deletion");
   }
 }
 
