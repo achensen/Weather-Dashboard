@@ -29,9 +29,7 @@ const humidityEl: HTMLParagraphElement = document.getElementById(
 ) as HTMLParagraphElement;
 
 /*
-
 API Calls
-
 */
 
 const fetchWeather = async (cityName: string) => {
@@ -62,7 +60,7 @@ const fetchSearchHistory = async () => {
 };
 
 const deleteCityFromHistory = async (id: string) => {
-  console.log ('calling removeCity with ID', id);
+  console.log('calling removeCity with ID', id);
   await fetch(`/api/weather/history/${id}`, {
     method: 'DELETE',
     headers: {
@@ -72,38 +70,28 @@ const deleteCityFromHistory = async (id: string) => {
 };
 
 /*
-
 Render Functions
-
 */
+// const heading: HTMLElement = document.createElement('h2');
+// const weatherIcon: HTMLImageElement = document.createElement('img');
+// // convert the following to typescript
+// heading.textContent = `${city} (${date})`;
+// weatherIcon.setAttribute(
+//   'src',
+//   `https://openweathermap.org/img/w/${icon}.png`
+// );
+// weatherIcon.setAttribute('alt', iconDescription);
+// weatherIcon.setAttribute('class', 'weather-img');
+// heading.append(weatherIcon);
+// tempEl.textContent = `Temp: ${tempF}°F`;
+// windEl.textContent = `Wind: ${windSpeed} MPH`;
+// humidityEl.textContent = `Humidity: ${humidity} %`;
 
-
-  
-   
-
-  // // convert the following to typescript
-  // heading.textContent = `${city} (${date})`;
-  // weatherIcon.setAttribute(
-  //   'src',
-  //   `https://openweathermap.org/img/w/${icon}.png`
-  // );
-  // weatherIcon.setAttribute('alt', iconDescription);
-  // weatherIcon.setAttribute('class', 'weather-img');
-  // heading.append(weatherIcon);
-  // tempEl.textContent = `Temp: ${tempF}°F`;
-  // windEl.textContent = `Wind: ${windSpeed} MPH`;
-  // humidityEl.textContent = `Humidity: ${humidity} %`;
-
-  // if (todayContainer) {
-  //   todayContainer.innerHTML = '';
-  //   todayContainer.append(heading, tempEl, windEl, humidityEl);
-  // }
-
-
-  // const heading: HTMLElement = document.createElement('h2');
-  // const weatherIcon: HTMLImageElement = document.createElement('img');
+// if (todayContainer) {
+//   todayContainer.innerHTML = '';
+//   todayContainer.append(heading, tempEl, windEl, humidityEl);
+// }
 // };
-
 interface CurrentWeather {
   city: string;
   date: string;
@@ -132,14 +120,10 @@ const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
   humidityEl.textContent = `Humidity: ${humidity}%`
 
   if (todayContainer) {
-    todayContainer.innerHTML = ''; 
+    todayContainer.innerHTML = '';
     todayContainer.append(heading, weatherIcon, tempEl, windEl, humidityEl);
   }
 };
-
-
-
-
 
 
 const renderForecast = (forecast: any): void => {
@@ -202,9 +186,7 @@ const renderSearchHistory = async (searchHistory: any) => {
 };
 
 /*
-
 Helper Functions
-
 */
 
 const createForecastCard = () => {
@@ -287,9 +269,7 @@ const buildHistoryListItem = (city: any) => {
 };
 
 /*
-
 Event Handlers
-
 */
 
 const handleSearchFormSubmit = (event: any): void => {
@@ -316,14 +296,12 @@ const handleSearchHistoryClick = (event: any) => {
 const handleDeleteHistoryClick = (event: any) => {
   event.stopPropagation();
   const cityID = JSON.parse(event.target.getAttribute('data-city')).id;
-  console.log (cityID)
+  console.log(cityID)
   deleteCityFromHistory(cityID).then(getAndRenderHistory);
 };
 
 /*
-
 Initial Render
-
 */
 
 const getAndRenderHistory = () =>
