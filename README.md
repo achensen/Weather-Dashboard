@@ -36,4 +36,4 @@ To email me you can contact me at erinrjacobsen@gmail.com
 Please follow this link for my deployed application : [Weather Dashboard]()
 
 ## Additional Notes 
- 
+ The initial code for this project was provided by EDX Engineering Services Company to complete an assignment for a Full Stack Web Development Course. My contribution was to complete the code to ensure it had full functionality similar to the mock up that was provided. I did receive tutoring assistance to help with my understanding of this assignment, specifically with weatherService.ts to ensure the date could be read in a user friendly format, and the bonus for getting the cities to properly delete when the button was selected, including help recognizing that placing the method on the backend would allow all the data for forcast and the formatted data could be returned at the same time. 
