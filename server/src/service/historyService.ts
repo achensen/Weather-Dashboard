@@ -9,6 +9,7 @@ class HistoryService {
     return JSON.parse(data)
   }
   // addCity method that adds a city to the db.json file
+  // npm v4 creates a unique id for each city
   async addCity(city: string) {
     const currentCities = await this.read()
     const matchingCity = currentCities.find((item: any) => item.name.toLowerCase() === city.toLowerCase())
