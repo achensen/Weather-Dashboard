@@ -11,7 +11,7 @@
 * [Additional Notes](#additional-notes)
 
 ## Description
-This application allows for user input to check the 5 day forcast of a city. . yThe user also has the ability to remove city data as needed. 
+This application allows for user input to check the 5 day forecast of a city, so that the user can appropriately plan for travel
 
 ## License
 This project is licensed with MIT
