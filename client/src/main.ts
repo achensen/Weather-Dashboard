@@ -1,6 +1,6 @@
 import './styles/jass.css';
 
-// * All necessary DOM elements selected
+// All necessary DOM elements selected
 const searchForm: HTMLFormElement = document.getElementById(
   'search-form'
 ) as HTMLFormElement;
@@ -88,7 +88,7 @@ interface CurrentWeather {
 const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-//function to format the date is located in weatherService.ts
+  //function to format the date is located in weatherService.ts
   heading.textContent = `${city} (${date})`;
 
 
@@ -135,7 +135,7 @@ const renderForecastCard = (forecast: any) => {
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } =
     createForecastCard();
 
-  
+
   cardTitle.textContent = date;
   weatherIcon.setAttribute(
     'src',

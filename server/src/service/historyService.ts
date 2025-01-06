@@ -18,7 +18,7 @@ class HistoryService {
       id: v4()
     }
     console.log(newCity)
-  // method that writes the current cities array to the db.json file
+    // method that writes the current cities array to the db.json file
     currentCities.push(newCity)
     fs.writeFileSync("db/db.json", JSON.stringify(currentCities))
   }
@@ -26,11 +26,10 @@ class HistoryService {
   async removeCity(id: string) {
     const currentCities = await this.read();
     const index = currentCities.findIndex((item: any) => item.id === id);
-//remove the city with that id from the array
+    //remove the city with that id from the array
     currentCities.splice(index, 1);
-//puts the rest of the existing cities back in the db.json
-   fs.writeFileSync("db/db.json", JSON.stringify(currentCities));
-    console.log("Updated File Written Post Deletion");
+    //writes the existing cities back in the db.json
+    fs.writeFileSync("db/db.json", JSON.stringify(currentCities));
   }
 }
 
