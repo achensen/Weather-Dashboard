@@ -7,7 +7,7 @@
 * [Usage](#usage)
 * [Contributions](#contributions)
 * [Contact Information](#contact-information)
-* [Walkthough Video](#walkthrough-video)
+* [Link To Deployed Application](#link-to-deployed-application)
 * [Additional Notes](#additional-notes)
 
 ## Description
@@ -24,6 +24,7 @@ npm i
 
 
 
+
 ## Contributions
 EDX Starter code, myself, with some tutoring assistance (see additional notes)
 
@@ -31,8 +32,8 @@ EDX Starter code, myself, with some tutoring assistance (see additional notes)
 My GitHub account is [GitHub Account Link](https://github.com/achensen)
 To email me you can contact me at erinrjacobsen@gmail.com
 
-## Walkthrough Video
-Please follow this link for my Screencastify walkthrough : [Walkthrough Video]()
+## Link To Deployed Application
+Please follow this link for my deployed application : [Weather Dashboard]()
 
 ## Additional Notes 
  

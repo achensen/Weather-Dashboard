@@ -58,7 +58,7 @@ const fetchSearchHistory = async () => {
   });
   return history;
 };
-
+//console.log was added to make sure the correct id was being deleted 
 const deleteCityFromHistory = async (id: string) => {
   console.log('calling removeCity with ID', id);
   await fetch(`/api/weather/history/${id}`, {
@@ -72,26 +72,8 @@ const deleteCityFromHistory = async (id: string) => {
 /*
 Render Functions
 */
-// const heading: HTMLElement = document.createElement('h2');
-// const weatherIcon: HTMLImageElement = document.createElement('img');
-// // convert the following to typescript
-// heading.textContent = `${city} (${date})`;
-// weatherIcon.setAttribute(
-//   'src',
-//   `https://openweathermap.org/img/w/${icon}.png`
-// );
-// weatherIcon.setAttribute('alt', iconDescription);
-// weatherIcon.setAttribute('class', 'weather-img');
-// heading.append(weatherIcon);
-// tempEl.textContent = `Temp: ${tempF}°F`;
-// windEl.textContent = `Wind: ${windSpeed} MPH`;
-// humidityEl.textContent = `Humidity: ${humidity} %`;
 
-// if (todayContainer) {
-//   todayContainer.innerHTML = '';
-//   todayContainer.append(heading, tempEl, windEl, humidityEl);
-// }
-// };
+
 interface CurrentWeather {
   city: string;
   date: string;
@@ -102,21 +84,11 @@ interface CurrentWeather {
   humidity: number;
 }
 
-// const formatDate = (timestamp: number): string => {
-//   const date = new Date(timestamp * 1000);  
-//   return date.toLocaleDateString('en-US', {  
-//     weekday: 'long',
-//     year: 'numeric',
-//     month: 'long',
-//     day: 'numeric',
-//   });
-// };
-
+//Current Weather on the top of the deployed page
 const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
   const { city, date, icon, iconDescription, tempF, windSpeed, humidity } = currentWeather;
 
-  // const formattedDate = formatDate(currentWeather.date);
-
+//function to format the date is located in weatherService.ts
   heading.textContent = `${city} (${date})`;
 
 
@@ -138,7 +110,7 @@ const renderCurrentWeather = (currentWeather: CurrentWeather): void => {
   }
 };
 
-
+//5-day forcast information
 const renderForecast = (forecast: any): void => {
   const headingCol = document.createElement('div');
   const heading = document.createElement('h4');
@@ -163,7 +135,7 @@ const renderForecastCard = (forecast: any) => {
   const { col, cardTitle, weatherIcon, tempEl, windEl, humidityEl } =
     createForecastCard();
 
-  // Add content to elements
+  
   cardTitle.textContent = date;
   weatherIcon.setAttribute(
     'src',
@@ -190,7 +162,7 @@ const renderSearchHistory = async (searchHistory: any) => {
         '<p class="text-center">No Previous Search History</p>';
     }
 
-    // * Start at end of history array and count down to show the most recent cities at the top.
+    //  Starts at end of history array and count down to show the most recent cities at the top
     for (let i = historyList.length - 1; i >= 0; i--) {
       const historyItem = buildHistoryListItem(historyList[i]);
       searchHistoryContainer.append(historyItem);
@@ -229,7 +201,7 @@ const createForecastCard = () => {
   tempEl.classList.add('card-text');
   windEl.classList.add('card-text');
   humidityEl.classList.add('card-text');
-//why isnt humidity showing up in the array in inspect, undefined 
+
   return {
     col,
     cardTitle,
