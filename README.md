@@ -19,6 +19,8 @@ This project is licensed with MIT
 ## Installation 
 npm i
 
+## Contributions
+EDX Starter code, myself, with some tutoring assistance (see additional notes)
 ## Usage
 First enter the city name you wish to know the weather for in the _Search for a City:_ section and click _Search_
 ![City Search Input Field](/images/WD%20search%20for%20city.png)
@@ -42,9 +44,6 @@ Finally, to remove cities you no longer want on your list, select the trash can 
 But the rest of the cities you searched, will still remain
 
 ![previous city list now excluding Tampa](/images/WD%20new%20list%20excluding%20Tampa.png)
-
-## Contributions
-EDX Starter code, myself, with some tutoring assistance (see additional notes)
 
 ## Contact Information
 My GitHub account is [GitHub Account Link](https://github.com/achensen)
