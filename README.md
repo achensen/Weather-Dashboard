@@ -7,7 +7,6 @@
 * [Usage](#usage)
 * [Contributions](#contributions)
 * [Contact Information](#contact-information)
-* [Link To Deployed Application](#link-to-deployed-application)
 * [Additional Notes](#additional-notes)
 
 ## Description
@@ -19,8 +18,6 @@ This project is licensed with MIT
 ## Installation 
 npm i
 
-## Contributions
-EDX Starter code, myself, with some tutoring assistance (see additional notes)
 ## Usage
 First enter the city name you wish to know the weather for in the _Search for a City:_ section and click _Search_
 ![City Search Input Field](/images/WD%20search%20for%20city.png)
@@ -45,12 +42,13 @@ But the rest of the cities you searched, will still remain
 
 ![previous city list now excluding Tampa](/images/WD%20new%20list%20excluding%20Tampa.png)
 
+## Contributions
+EDX Starter code, myself, with some tutoring assistance (see additional notes)
+
 ## Contact Information
 My GitHub account is [GitHub Account Link](https://github.com/achensen)
 To email me you can contact me at erinrjacobsen@gmail.com
 
-## Link To Deployed Application
-Please follow this link for my deployed application : [Weather Dashboard](https://weather-dashboard-render-atc8.onrender.com)
 
 ## Additional Notes 
  The initial code for this project was provided by EDX Engineering Services Company to complete an assignment for a Full Stack Web Development Course. My contribution was to complete the code to ensure it had full functionality similar to the mock up that was provided. I did receive tutoring assistance to help with my understanding of this assignment, specifically with weatherService.ts to ensure the date could be read in a user friendly format, and the bonus for getting the cities to properly delete when the button was selected, including help recognizing that placing the method on the backend would allow all the data for forcast and the formatted data could be returned at the same time, and finally to properly ensure routes on the server.ts.
